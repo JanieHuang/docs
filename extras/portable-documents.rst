@@ -6,13 +6,14 @@ The OxyPlot core library contains a class ``PortableDocument`` that can be used 
 
 .. code:: csharp
 
+    var file = File.Create("HelloWorld.pdf");
     var doc = new PortableDocument();
     doc.Title = "Hello world";
     doc.Author = "objo";
     doc.AddPage(PageSize.A4);
     doc.SetFont("Arial", 96);
     doc.DrawText(50, 400, "Hello world!");
-    doc.Save("HelloWorld.pdf");
+    doc.Save(file);
 
 Note that the coordinate system origin is at the bottom left corner of the page and the unit is point (1/72 inch).
 
